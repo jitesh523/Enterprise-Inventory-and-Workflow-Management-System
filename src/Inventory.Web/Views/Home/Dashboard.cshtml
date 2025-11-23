@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="dashboard">
+    <h1>Inventory Management Dashboard</h1>
+    
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <h3>Total Orders</h3>
+            <p class="stat-number">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Low Stock Items</h3>
+            <p class="stat-number">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Pending POs</h3>
+            <p class="stat-number">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Total Inventory Value</h3>
+            <p class="stat-number">$0</p>
+        </div>
+    </div>
+
+    <div class="dashboard-charts">
+        <div class="chart-container">
+            <h3>Monthly Sales</h3>
+            <canvas id="salesChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Inventory Status</h3>
+            <canvas id="inventoryChart"></canvas>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sales Chart
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        new Chart(salesCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [12000, 19000, 15000, 25000, 22000, 30000],
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            }
+        });
+
+        // Inventory Chart
+        const invCtx = document.getElementById('inventoryChart').getContext('2d');
+        new Chart(invCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['In Stock', 'Low Stock', 'Out of Stock'],
+                datasets: [{
+                    data: [300, 50, 10],
+                    backgroundColor: ['#4CAF50', '#FFC107', '#F44336']
+                }]
+            }
+        });
+    </script>
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Inventory Management System</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/">Inventory Management</a>
+                <div class="navbar-nav">
+                    <a class="nav-link" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
+                    <a class="nav-link" asp-controller="Products" asp-action="Index">Products</a>
+                    <a class="nav-link" asp-controller="Orders" asp-action="Index">Orders</a>
+                    <a class="nav-link" asp-controller="PurchaseOrders" asp-action="Index">Purchase Orders</a>
+                    <a class="nav-link" asp-controller="Inventory" asp-action="Index">Inventory</a>
+                    <a class="nav-link" asp-controller="Vendors" asp-action="Index">Vendors</a>
+                    <a class="nav-link" asp-controller="Reports" asp-action="Index">Reports</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container main-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2024 - Enterprise Inventory Management System
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
