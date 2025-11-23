@@ -1,0 +1,72 @@
+# Ignore build outputs
+bin/
+obj/
+out/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore Visual Studio files
+.vs/
+*.vsidx
+*.vssscc
+
+# Ignore Rider files
+.idea/
+
+# Ignore VS Code files
+.vscode/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# Ignore test results
+TestResults/
+*.trx
+*.coverage
+
+# Ignore database files
+*.mdf
+*.ldf
+*.db
+*.sqlite
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Ignore migration backups
+Migrations/
+
+# Ignore appsettings with secrets
+appsettings.Development.json
+appsettings.Production.json
+appsettings.*.json
+!appsettings.json
+
+# Ignore connection strings
+connectionstrings.config
+
+# Ignore Python virtual environment (for PDF extraction)
+venv/
+*.pyc
+__pycache__/
+
+# Ignore extracted documentation
+documentation.txt
+extract_pdf.py
